@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:compositionEditor="clr-namespace:CompositionEditor"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="700"
+        x:Class="CompositionEditor.MainWindow"
+        Title="CompositionEditor"
+        Background="DarkGray"
+        Width="500" Height="700">
+  <DockPanel Width="300"
+             Background="WhiteSmoke">
+    <Label Content="Header"
+           Margin="12"
+           DockPanel.Dock="Top" />
+    <StackPanel Name="Panel"
+                Background="Transparent">
+      <StackPanel.GestureRecognizers>
+        <!-- <PullGestureRecognizer PullDirection="TopToBottom"/> -->
+        <compositionEditor:PullGestureRecognizer2 PullDirection="TopToBottom"/>
+      </StackPanel.GestureRecognizers>
+      <Border Background="LightGreen"
+              Height="48">
+        <TextBlock Text="Item 1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+      <Border Background="LightCoral"
+              Height="48">
+        <TextBlock Text="Item 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+      <Border Background="LightSkyBlue"
+              Height="48">
+        <TextBlock Text="Item 3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+    </StackPanel>
+  </DockPanel>
+</Window>
