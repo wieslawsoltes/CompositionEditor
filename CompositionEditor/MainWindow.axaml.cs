@@ -90,11 +90,12 @@ public partial class MainWindow : Window
 
                 var compositor = compositionVisual.Compositor;
                 
-                var easing = new SpringEasing(1, 2000, 35);
+                var easing1 = new SpringEasing(1, 2000, 35);
+                var easing2 = new SpringEasing(1, 4000, 50);
 
                 var offsetAnimation = compositor.CreateVector3KeyFrameAnimation();
-                offsetAnimation.InsertKeyFrame(0.0f, new Vector3((float)compositionVisual.Offset.X, (float)compositionVisual.Offset.Y, 0), easing);
-                offsetAnimation.InsertKeyFrame(1.0f, new Vector3((float)_offset.X, (float)_offset.Y, 0), easing);
+                offsetAnimation.InsertKeyFrame(0.0f, new Vector3((float)compositionVisual.Offset.X, (float)compositionVisual.Offset.Y, 0), easing1);
+                offsetAnimation.InsertKeyFrame(1.0f, new Vector3((float)_offset.X, (float)_offset.Y, 0), easing2);
                 offsetAnimation.Direction = PlaybackDirection.Normal;
                 offsetAnimation.Duration = TimeSpan.FromMilliseconds(800);
                 offsetAnimation.IterationBehavior = AnimationIterationBehavior.Count;
