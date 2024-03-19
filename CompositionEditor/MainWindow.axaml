@@ -9,18 +9,25 @@
         Background="DarkGray"
         Width="500" Height="700">
   <DockPanel Width="300"
-             Background="WhiteSmoke">
+             Background="WhiteSmoke"
+             ClipToBounds="True">
     <Label Content="Header"
            Margin="12"
            DockPanel.Dock="Top" />
     <StackPanel Name="Panel"
-                Background="Transparent">
+                Background="Transparent"
+                ClipToBounds="True">
       <StackPanel.GestureRecognizers>
         <!-- <PullGestureRecognizer PullDirection="TopToBottom"/> -->
+        <!-- <compositionEditor:PullGestureRecognizer2 PullDirection="LeftToRight"/> -->
         <compositionEditor:PullGestureRecognizer2 PullDirection="TopToBottom"/>
       </StackPanel.GestureRecognizers>
       <Border Background="LightGreen"
               Height="48">
+        <Border.GestureRecognizers>
+          <!-- <PullGestureRecognizer PullDirection="TopToBottom"/> -->
+          <compositionEditor:PullGestureRecognizer2 PullDirection="RightToLeft"/>
+        </Border.GestureRecognizers>
         <TextBlock Text="Item 1" HorizontalAlignment="Center" VerticalAlignment="Center" />
       </Border>
       <Border Background="LightCoral"
